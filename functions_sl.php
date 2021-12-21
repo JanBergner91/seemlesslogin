@@ -78,6 +78,7 @@ function register($benutzer_name,$benutzer_passwort)
 	{
 		$statement = $pdo_sl->prepare("INSERT INTO sl_users (users_sid, users_username, users_password) VALUES ('" . $benutzer_name . "','" . $benutzer_name . "','" . password_hash($benutzer_passwort, PASSWORD_DEFAULT) . "');");
 		$result = $statement->execute();
+		//ToDo: Profil anlegen
 	}
 }
 
@@ -143,7 +144,7 @@ function sso()
 function anmelden_ldap($benutzer_name)
 {
 		
-		$ldap_address = "ldap://dc-2019-vb.stadt-hilden.de";
+		$ldap_address = "ldap://CN.DC.DC";
 		$ldap_port = 389;
 		
 		if ($connect = ldap_connect($ldap_address, $ldap_port)) {
@@ -153,7 +154,7 @@ function anmelden_ldap($benutzer_name)
 			
 			
 			//if ($bind = ldap_bind($connect, $benutzer_domain . "\\" . $benutzer_name, $benutzer_passwort))
-			if ($bind = ldap_bind($connect, "stadt-hilden\\kldap", "Hilden40721!"))
+			if ($bind = ldap_bind($connect, "BENUTZERDOMAIN\BENUTZER", "BENUTZERPASSWORT"))
 			{
 				
 				$dn = "DC=stadt-hilden,DC=de";
