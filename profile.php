@@ -46,10 +46,10 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/app.css" rel="stylesheet">
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<title>RS.DEV - Profile</title>
+	<title><?php echo $app_logo; ?> - Profile</title>
 </head>
 
-<body class="bg-theme bg-theme9">
+<body class="bg-theme <?php echo $app_style; ?>">
 	<!--wrapper-->
 	<div class="wrapper">
 		<div class="d-flex align-items-center justify-content-center my-5 my-lg-0">
@@ -57,7 +57,7 @@
 				<div class="row row-cols-1 row-cols-lg-1 row-cols-xl-1">
 					<div class="col mx-auto">
 						<div class="my-4 text-center">
-							<img src="assets/images/logo_white.png" width="180" alt="" />
+							<img src="<?php echo $app_logo; ?>" width="180" alt="" />
 						</div>
 						<div class="card">
 							<div class="card-body">
@@ -69,13 +69,12 @@
 												<div class="card radius-15">
 													<div class="card-body text-center">
 														<?php
-															$authurl = 'https://auth.rootserver.dev';
-															$callbackurl = 'https://auth.rootserver.dev/callback.php';
+															
 															$challenge = bin2hex(openssl_random_pseudo_bytes(16));
 															$xurl= '' . $authurl . '/login.php?callback=' . $callbackurl . '&challenge=' . $challenge . '';
 														?>
 														<div class="p-4 border radius-15">
-															<!--<img src="https://via.placeholder.com/110x110" width="110" height="110" class="rounded-circle shadow" alt="">-->
+															
 															<h5 class="mb-0 mt-5"><?php echo $userp['profiles_firstname'] . ' ' . $userp['profiles_lastname']; ?></h5>
 															<p class="mb-3"><?php echo $userp['profiles_email']; ?></p>
 															<div class="list-inline contacts-social mt-3 mb-3">
@@ -83,7 +82,7 @@
 																<?php
 																if (isset($_SESSION['sl_users_name']))
 																{ 
-																	echo '<a href="https://auth.rootserver.dev/profile.php?ua=' . $user['users_username'] . '" class="list-inline-item bg-info text-white border-0"><i class="lni lni-user"></i></a>';
+																	echo '<a href="' . $authurl . '/profile.php?ua=' . $user['users_username'] . '" class="list-inline-item bg-info text-white border-0"><i class="lni lni-user"></i></a>';
 																	echo '<a href="./index.php?logout=1" class="list-inline-item bg-danger text-white border-0"><i class="lni lni-cross-circle"></i></a>';
 																}
 																else

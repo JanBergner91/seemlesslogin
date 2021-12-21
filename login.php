@@ -194,10 +194,10 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/app.css" rel="stylesheet">
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<title>RS.DEV - Login</title>
+	<title><?php echo $app_logo; ?> - Login</title>
 </head>
 
-<body class="bg-theme bg-theme9">
+<body class="bg-theme <?php echo $app_style; ?>">
 	<!--wrapper-->
 	<div class="wrapper">
 		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
@@ -205,7 +205,7 @@
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 					<div class="col mx-auto">
 						<div class="my-4 text-center">
-							<!--<img src="assets/images/logo_white.png" width="180" alt="" />-->
+							<img src="<?php echo $app_logo; ?>" width="180" alt="" />
 						</div>
 						<div class="card">
 							<div class="card-body">

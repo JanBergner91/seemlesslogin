@@ -14,10 +14,10 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/app.css" rel="stylesheet">
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<title>RS.DEV - Lock</title>
+	<title><?php echo $app_logo; ?> - Lock</title>
 </head>
 
-<body class="bg-theme bg-theme9">
+<body class="bg-theme <?php echo $app_style; ?>">
 	<!-- wrapper -->
 	<div class="wrapper">
 		<div class="authentication-lock-screen d-flex align-items-center justify-content-center">

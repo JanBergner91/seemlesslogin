@@ -1,5 +1,16 @@
 <?php
 
+$app_title = '';
+$app_style = 'bg-theme3';
+$app_logo = 'assets/images/logo_white.png';
+
+//URL of the authentication server
+$authurl = 'https://auth.rootserver.dev';
+//URL of this script
+$localurl = 'https://auth.rootserver.dev';
+//URL of your callback-script (e.g. callback.php)
+$callbackurl = $localurl . '/callback.php';
+
 $sess_life_time = 21600; //in seconds
 $sess_path = "/";
 $sess_domain = ".stadt-hilden.de";
